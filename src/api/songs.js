@@ -27,6 +27,18 @@ export const createSong = (newSong) => {
 }
 
 //update function
+export const updateSong = (updatedSong) => {
+    // console.log('user', user)
+    console.log('this is newSong', updatedSong)
+    return axios({
+        url: `${apiUrl}/songs/${updatedSong._id}`,
+        method: 'PATCH',
+        headers: {
+            // Authorization: `Token token=${user.token}`
+        },
+        data: { song: updatedSong }
+    })
+}
 
 //delete function
 export const removeSong = (songId) => {

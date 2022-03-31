@@ -25,3 +25,17 @@ export const createSong = (newSong) => {
         data: { song: newSong }
     })
 }
+
+//update function
+
+//delete function
+export const removeSong = (songId) => {
+    // console.log('user', user)
+    return axios({
+        url: `${apiUrl}/songs/${songId}`,
+        method: 'DELETE',
+        headers: {
+            // Authorization: `Token token=${user.token}`
+        }
+    })
+}

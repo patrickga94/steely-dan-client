@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowSong from './components/songs/ShowSong'
+import CreateSong from './components/songs/CreateSong'
 
 const App = () => {
 
@@ -47,6 +48,8 @@ const App = () => {
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 					<Route path='/songs/:songId' element={<ShowSong/>}/>
+					<Route path='/addSong' element={<CreateSong/>}/>
+
 
 					<Route
 						path='/sign-up'

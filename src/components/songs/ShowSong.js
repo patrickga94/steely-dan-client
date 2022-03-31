@@ -15,15 +15,17 @@ const ShowSong = (props) => {
     }, [])
     console.log('this is song', song)
     // console.log('this is song.title', song.title)
+
     if(!song){
         return(
             <h1>loading...</h1>
         )
     }
+    let songRelease = song.released.slice(0, -14)
     return (
         <>
             <h1>{song.title}</h1>
-            <h3>Off of {song.album} released in {song.released}</h3>
+            <h3>Off of {song.album} released in {songRelease}</h3>
         </>
     )
 }

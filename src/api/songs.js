@@ -11,3 +11,17 @@ export const showSong = (songId) => {
     console.log('this is the api song id, ', songId)
     return axios(`${apiUrl}/songs/${songId}`)
 }
+
+//create function
+export const createSong = (newSong) => {
+    // console.log('user', user)
+    console.log('this is newSong', newSong)
+    return axios({
+        url: `${apiUrl}/songs`,
+        method: 'POST',
+        headers: {
+            // Authorization: `Token token=${user.token}`
+        },
+        data: { song: newSong }
+    })
+}

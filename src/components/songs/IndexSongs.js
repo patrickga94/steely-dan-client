@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { getAllSongs } from '../../api/songs'
+import { Link } from 'react-router-dom'
 
 const IndexSongs = (props) => {
     const [songs, setSongs] = useState(null)
@@ -8,6 +9,7 @@ const IndexSongs = (props) => {
         getAllSongs()
             .then(res => {
                 setSongs(res.data.songs)
+                // console.log('these are the songs', songs)
             })
             .catch(console.error)
     }, [])
@@ -20,9 +22,10 @@ const IndexSongs = (props) => {
     let songsJsx
 
     if (songs.length > 0) {
+        console.log('this is songs ', songs)
         songsJsx = songs.map(song => (
-            <li key={song.id}>
-                {song.title}
+            <li key={song._id}>
+                <Link to={`/songs/${song._id}`}> {song.title} </Link> 
             </li>
         ))
     }
